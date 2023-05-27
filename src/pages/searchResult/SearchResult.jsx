@@ -5,9 +5,9 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import "./style.scss";
 
 import { fetchDataFromApi } from "../../utils/api";
-import {ContentWrapper} from "../../components/contentWrapper/ContentWrapper";
-import {MovieCard} from "../../components/movieCard/MovieCard";
-import {Spinner} from "../../components/spinner/Spinner";
+import { ContentWrapper } from "../../components/ContentWrapper/ContentWrapper";
+import { MovieCard } from "../../components/movieCard/MovieCard";
+import { Spinner } from "../../components/spinner/Spinner";
 import noResults from "../../assets/no-results.png";
 
 export const SearchResult = () => {
@@ -57,8 +57,8 @@ export const SearchResult = () => {
                         <>
                             <div className="pageTitle">
                                 {`Search ${data?.total_results > 1
-                                        ? "results"
-                                        : "result"
+                                    ? "results"
+                                    : "result"
                                     } of '${query}'`}
                             </div>
                             <InfiniteScroll
