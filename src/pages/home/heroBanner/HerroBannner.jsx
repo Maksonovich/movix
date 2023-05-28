@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './style.scss';
 
-import Img from '../../../components/lazyloadimage/Img';
 import { ContentWrapper } from '../../../components/ContentWrapper/ContentWrapper';
 
 import useFetch from '../../../hooks/useFetch';
+import Img from './../../../components/lazyloadimage/Img';
 
 export const HerroBannner = () => {
 
