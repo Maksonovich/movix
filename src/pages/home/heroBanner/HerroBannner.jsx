@@ -6,7 +6,6 @@ import './style.scss';
 import { ContentWrapper } from '../../../components/ContentWrapper/ContentWrapper';
 
 import useFetch from '../../../hooks/useFetch';
-import Img from './../../../components/lazyloadimage/Img';
 
 export const HerroBannner = () => {
 
@@ -32,8 +31,8 @@ export const HerroBannner = () => {
         <div className='heroBanner'>
 
             {!loading && <div className="backdrop-img">
-                <Img src={background} />
-            </div>}
+                <img className='BannerImg' src={background} />
+            </div>} 
 
             <div className='opacity-layer'>
 
