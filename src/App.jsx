@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import { fetchDataFromApi } from "./utils/api";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -12,6 +12,8 @@ import { Details } from "./pages/details/Details";
 import { SearchResult } from "./pages/searchResult/SearchResult";
 import { Explore } from "./pages/explore/Explore";
 import { PageNotFound } from "./pages/404/PageNotFound";
+import { Favorite } from "./pages/favorite/Favorite";
+import { CardDetails } from "./pages/details/cardDetails/CardDetails";
 
 function App() {
   const dispatch = useDispatch();
