@@ -8,7 +8,7 @@ import { fetchDataFromApi } from "../../utils/api";
 import { MovieCard } from "../../components/movieCard/MovieCard";
 import { Spinner } from "../../components/spinner/Spinner";
 import noResults from "../../assets/no-results.png";
-import { ContentWrapper } from './../../components/ContentWrapper/ContentWrapper';
+import { ContentWrapper } from "../../components/ContentWrapper/ContentWrapper";
 
 export const SearchResult = () => {
     const [data, setData] = useState(null);

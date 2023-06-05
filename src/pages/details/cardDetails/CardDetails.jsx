@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import '../../Favorite/style.scss';
-import { ContentWrapper } from "../../../components/contentWrapper/ContentWrapper";
+import '../../favorite/style.scss';
+import { ContentWrapper } from './../../../components/ContentWrapper/ContentWrapper';
 
 export const CardDetails = () => {
     const [movie, setMovie] = useState([]);

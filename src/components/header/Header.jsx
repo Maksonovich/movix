@@ -7,7 +7,7 @@ import logo from '../../assets/movix-logo.svg'
 import './style.scss';
 
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ContentWrapper } from '../contentWrapper/ContentWrapper';
+import { ContentWrapper } from '../ContentWrapper/ContentWrapper';
 
 export const Header = () => {
 

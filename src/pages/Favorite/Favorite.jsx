@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Card } from '../../components/card/Card';
 import './style.scss';
-import { ContentWrapper } from '../../components/contentWrapper/ContentWrapper';
+import { ContentWrapper } from '../../components/ContentWrapper/ContentWrapper';
 
 export const Favorite = () => {
 

@@ -4,12 +4,11 @@ import { useSelector } from "react-redux";
 import dayjs from "dayjs";
 
 import "./style.scss";
-
 import { ContentWrapper } from "../../../components/ContentWrapper/ContentWrapper";
+import { Img } from "../../../components/lazyloadimage/Img";
 import useFetch from "../../../hooks/useFetch";
 import { Genres } from "../../../components/genres/Genres";
 import { CircleRating } from "../../../components/circleRating/CircleRating";
-import { Img } from "../../../components/lazyloadimage/Img";
 import PosterFallback from "../../../assets/no-poster.png";
 
 import { VideoPopup } from './../../../components/videoPopup/VideoPopup';
