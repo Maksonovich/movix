@@ -13,7 +13,6 @@ import { SearchResult } from "./pages/searchResult/SearchResult";
 import { Explore } from "./pages/explore/Explore";
 import { PageNotFound } from "./pages/404/PageNotFound";
 import { CardDetails } from "./pages/details/cardDetails/CardDetails";
-import { Favorite } from './pages/favorite/Favorite';
 
 function App() {
 
@@ -64,8 +63,6 @@ function App() {
         <Route path="/search/:query" element={<SearchResult />} />
         <Route path="/explore/:mediaType" element={<Explore />} />
         <Route path="*" element={<PageNotFound />} />
-        <Route path="/favorite" element={<Favorite />} />
-        <Route path="anime/:id" element={<CardDetails />} />
       </Routes>
       <Footer />
     </div>
