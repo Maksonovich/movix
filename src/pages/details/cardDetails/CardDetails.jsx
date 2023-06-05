@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import '../../favorite/style.scss';
 import { ContentWrapper } from './../../../components/ContentWrapper/ContentWrapper';
 
 export const CardDetails = () => {
