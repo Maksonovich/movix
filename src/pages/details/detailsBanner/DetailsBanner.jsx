@@ -46,7 +46,6 @@ export const DetailsBanner = ({ video, crew }) => {
                             <div className="backdrop-img">
                                 <Img src={url.backdrop + data?.backdrop_path} />
                             </div>
-                            <div className="opacity-layer"></div>
                             <ContentWrapper>
                                 <div className="content">
                                     <div className="left">

@@ -1,31 +1,32 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
-import { Routes, Route } from "react-router-dom";
-
+import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { fetchDataFromApi } from "./utils/api";
 
 import { useSelector, useDispatch } from "react-redux";
 import { getApiConfiguration, getGenres } from "./store/homeSlice";
 
-import { Details } from "./pages/details/Details";
+import { Header } from "./components/header/Header";
+import { Footer } from "./components/footer/Footer";
 import { Home } from "./pages/home/Home";
+import { Details } from "./pages/details/Details";
 import { SearchResult } from "./pages/searchResult/SearchResult";
 import { Explore } from "./pages/explore/Explore";
 import { PageNotFound } from "./pages/404/PageNotFound";
-import { Layout } from "./Layout/Layout";
+import { Favorite } from "./pages/Favorite/Favorite";
+import { CardDetails } from "./pages/details/cardDetails/CardDetails";
 
-export default function App() {
+function App() {
+
   const dispatch = useDispatch();
   const { url } = useSelector((state) => state.home);
 
   useEffect(() => {
     fetchApiConfig();
-    genreCall();
+    genresCall();
   }, []);
 
   const fetchApiConfig = () => {
     fetchDataFromApi("/configuration").then((res) => {
-      console.log(res);
 
       const url = {
         backdrop: res.images.secure_base_url + "original",
@@ -37,18 +38,16 @@ export default function App() {
     });
   };
 
-  const genreCall = async () => {
+  const genresCall = async () => {
     let promises = [];
-    let endPoint = ["tv", "movie"];
+    let endPoints = ["tv", "movie"];
     let allGenres = {};
 
-    endPoint.forEach((url) => {
+    endPoints.forEach((url) => {
       promises.push(fetchDataFromApi(`/genre/${url}/list`));
     });
 
     const data = await Promise.all(promises);
-
-    console.log(data);
     data.map(({ genres }) => {
       return genres.map((item) => (allGenres[item.id] = item));
     });
@@ -57,14 +56,20 @@ export default function App() {
   };
 
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route path="" element={<Home />} />
+    <div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/:mediaType/:id" element={<Details />} />
         <Route path="/search/:query" element={<SearchResult />} />
         <Route path="/explore/:mediaType" element={<Explore />} />
         <Route path="*" element={<PageNotFound />} />
-      </Route>
-    </Routes>
+        <Route path="/favorite" element={<Favorite />} />
+        <Route path="anime/:id" element={<CardDetails />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 }
+
+export default App;

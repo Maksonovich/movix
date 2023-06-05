@@ -7,7 +7,7 @@ import logo from '../../assets/movix-logo.svg'
 import './style.scss';
 
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ContentWrapper } from './../ContentWrapper/ContentWrapper';
+import { ContentWrapper } from '../contentWrapper/ContentWrapper';
 
 export const Header = () => {
 
@@ -79,6 +79,7 @@ export const Header = () => {
                     <img src={logo} alt="" />
                 </div>
                 <ul className="menuItems">
+                    <li className="menuItem" onClick={() => navigate('/favorite')}>My Favorite</li>
                     <li className="menuItem" onClick={() => navigationHandler("movie")}>Movies</li>
                     <li className="menuItem" onClick={() => navigationHandler("tv")}>Tv & Shows</li>
                     <li className="menuItem">
