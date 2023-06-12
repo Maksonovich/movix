@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-<<<<<<< HEAD
-=======
 import '../../favorite/style.scss';
->>>>>>> d1cca4a (movixx)
 import { ContentWrapper } from './../../../components/ContentWrapper/ContentWrapper';
 
 export const CardDetails = () => {
