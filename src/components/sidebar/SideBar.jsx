@@ -1,5 +1,5 @@
 import React from 'react'
-import { Img } from '../lazyLoadImage/Img'
+import { Img } from '../lazyloadimage/Img'
 
 export const SideBar = ({ data }) => {
     return (
