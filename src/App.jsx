@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { fetchDataFromApi } from "./utils/api";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -12,12 +12,11 @@ import { Details } from "./pages/details/Details";
 import { SearchResult } from "./pages/searchResult/SearchResult";
 import { Explore } from "./pages/explore/Explore";
 import { PageNotFound } from "./pages/404/PageNotFound";
-import { CardDetails } from "./pages/details/cardDetails/CardDetails";
 
 function App() {
-
   const dispatch = useDispatch();
   const { url } = useSelector((state) => state.home);
+  console.log(url);
 
   useEffect(() => {
     fetchApiConfig();
@@ -26,6 +25,7 @@ function App() {
 
   const fetchApiConfig = () => {
     fetchDataFromApi("/configuration").then((res) => {
+      console.log(res);
 
       const url = {
         backdrop: res.images.secure_base_url + "original",
@@ -47,6 +47,7 @@ function App() {
     });
 
     const data = await Promise.all(promises);
+    console.log(data);
     data.map(({ genres }) => {
       return genres.map((item) => (allGenres[item.id] = item));
     });
@@ -55,7 +56,7 @@ function App() {
   };
 
   return (
-    <div>
+    <>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -65,7 +66,7 @@ function App() {
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
 
